@@ -1,0 +1,97 @@
+<template>
+    <Panel :class="$style.panel" title="新手特权">
+        <section :class="$style.content">
+            <div :class="$style.item">
+                <h4>下载APP<span :class="$style.red">送888元礼包</span></h4>
+                <p :class="$style.gray">新手专享</p>
+                <img src="https://img12.360buyimg.com/n1/s300x300_jfs/t1/137756/21/1774/163507/5efc2853E4c1e9d27/08d2d1df9bb36103.jpg" alt="">
+            </div>
+            <div :class="$style.item">
+                <ul>
+                    <li>
+                        <img src="https://img12.360buyimg.com/n1/s300x300_jfs/t1/95900/11/17739/113824/5e8ac0b6E8c658730/a174c5c7df60f0db.jpg" alt="">
+                        <h4 :class="$style.red">领128元新手礼包</h4>
+                        <p :class="$style.gray">立即开通</p>
+                    </li>
+                    <li>
+                        <img src="https://img12.360buyimg.com/n1/s300x300_jfs/t1/119338/17/11810/187132/5f045a24E87fc2c01/b5f046c03c5393af.jpg" alt="">
+                        <h4>打白条<span :class="$style.red">享免息</span></h4>
+                        <p :class="$style.gray">立即开通享豪礼</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </Panel>
+</template>
+<script>
+import Panel from "../core/panel.vue"
+export default {
+    name: "Novice",
+    components: { Panel },
+}
+</script>
+
+<style module lang="scss">
+    @import "../../css/element";
+    .panel{
+        @include panel();
+        >h4{
+            border-bottom: 1px solid #ddd;
+        }
+        .content{
+            @include list(row);
+            .item{
+                width: 50%;
+                box-sizing: border-box;
+                &:first-child{
+                  padding: 32px 20px;
+                  text-align: center;
+                    border-right: 1px solid #ddd;
+                    img{
+                        width: 132px;
+                        height: 132px;
+                        margin: 20px auto 0;
+                    }
+                }
+                h4{
+                  font-size: 26px;
+                    line-height: 40px;
+                }
+                .red{
+                    color: #f00;
+                }
+                .gray{
+                    color: #999;
+                    font-size: 24px;
+                }
+                p{
+                    margin-top: 6px;
+                    font-size: 24px;
+                }
+                ul{
+                    width: 100%;
+                    li{
+                        height: 144px;
+                        width: 100%;
+                        padding: 32px 28px;
+                        box-sizing: border-box;
+                        &:first-child{
+                            border-bottom: 1px solid #ddd;
+                        }
+                        h4{
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            text-align: left;
+                        }
+                        img{
+                            width: 80px;
+                            height: 80px;
+                            float: right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+</style>
